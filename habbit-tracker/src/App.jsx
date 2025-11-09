@@ -7,9 +7,23 @@ import Habit from './Habit.jsx'
 
 export default function App() {
 
-  console.log(getTodayFormattedDate());
   const today = new Date();
   const todayFrenchFormat = getTodayFrenchFormat(today);
+
+  const [habits, setHabits] = useState([
+    { id: 1, text: "Marcher 15mn", status: "todo", value: 1 },
+    { id: 2, text: "Méditer", status: "done", value: 1 },
+    { id: 3, text: "Boire de l'eau", status: "in-progress", value: 12 },
+  ]);
+
+  const habitsElements = habits.map(habit => (
+    <Habit
+      key={habit.id}
+      text={habit.text}
+      status={habit.status}
+      value={habit.value}
+    />
+  ));
 
 
   return (
@@ -19,9 +33,7 @@ export default function App() {
         <NewHabit />
         <h2>{todayFrenchFormat}</h2>
         <div className="current-habits">
-          <Habit text="Marcher 15mn" status="todo" value={1} />
-          <Habit text="Méditer" status="done" value={1} />
-          <Habit text="Boire de l'eau" status="in-progress" value={12} />
+          {habitsElements}
         </div>
       </main>
     </>
