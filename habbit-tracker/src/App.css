@@ -170,9 +170,9 @@ h2 {
   * Habit component styles
   */
 .habit {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   padding: 15px 4px;
   border-top: 1px solid #d9d9d9;
 }
@@ -187,6 +187,27 @@ h2 {
   background: white;
 }
 
+.habit .main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 15px 4px;
+  border-top: 1px solid #d9d9d9; */
+}
+
 .habit.done .indicator {
   color: #14ae5c;
+}
+
+ul.partial-indicators {
+  margin-top: 20px;
+  padding-left: 0;
+  display: flex;
+  gap: 10px 19px;
+  flex-wrap: wrap;
+  color: #14ae5c;
+}
+
+ul.partial-indicators li {
+  list-style: none;
 }
