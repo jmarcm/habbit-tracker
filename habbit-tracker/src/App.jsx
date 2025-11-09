@@ -20,7 +20,11 @@ export default function App() {
       <main>
         <NewHabit />
         <h2>{todayFrenchFormat}</h2>
-        <Habit />
+        <div className="current-habits">
+          <Habit text="Marcher 15mn" status="todo" value={1} />
+          <Habit text="Méditer" status="done" value={1} />
+          <Habit text="Boire de l'eau" status="in-progress" value={12} />
+        </div>
       </main>
     </>
   )

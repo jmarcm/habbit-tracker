@@ -1,13 +1,22 @@
 import React from "react";
-import { FaCirclePlus } from "react-icons/fa6";
+import { FaCirclePlus, FaSquareCheck } from "react-icons/fa6";
 
-export default function Habit() {
+export default function Habit({ text, status, type, ...props }) {
+    console.log(props);
     return (
-        <div className="habit todo">
-            <span>Marcher 15 mn</span>
+        <div className={`habit ${status}`}>
+            <div>{text}</div>
+            { (status === 'in-progress') ? (
             <button className="btn">
                 <FaCirclePlus />
             </button>
+            ) : (
+            <div className="indicator">
+                <FaSquareCheck />
+            </div>
+            ) }
+
+
         </div>
     )
 }
