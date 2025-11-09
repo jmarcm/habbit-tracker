@@ -5,6 +5,7 @@ import './App.css'
 import { getTodayFormattedDate, getTodayFrenchFormat } from './utils/dates.js'
 import Header from './components/Header.jsx'
 import NewHabit from './NewHabit.jsx'
+import Habit from './Habit.jsx'
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
       <main>
         <NewHabit />
         <h2>{todayFrenchFormat}</h2>
+        <Habit />
       </main>
     </>
   )

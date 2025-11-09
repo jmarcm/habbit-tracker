@@ -1,5 +1,7 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,18 +25,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -42,14 +57,21 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -57,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -69,6 +91,7 @@ body {
   padding-left: 1.563em;
   padding-right: 1.563em;
 }
+
 header {
   overflow: auto;
 }
@@ -97,6 +120,13 @@ h2 {
   font-weight: 400;
   font-style: normal;
 }
+
+.btn {
+  border: 0;
+  padding: 0;
+}
+
+
 
 .add-habit-form {
   display: flex;
@@ -131,4 +161,27 @@ h2 {
   padding: 9px 13px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
+}
+
+
+/**
+  * Habit component styles
+  */
+.habit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 15px 4px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.habit:last-of-type {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.habit button>svg {
+  width: 25px;
+  height: 25px;
+  background: white;
 }
