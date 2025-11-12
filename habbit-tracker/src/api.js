@@ -11,10 +11,22 @@ export async function fetchAllHabitsWithLogs() {
     //     console.log("data", data);
     // }
 
+    function getProductStatus(value, daily_amount) {
+        if (value === null) {
+            return "todo";
+        }
+        if (value < daily_amount) {
+            return "in progress";
+        }
+        if (value === daily_amount) {
+            return "done";
+        }
+        return "unknown";
+    }
+
 
     data.forEach(habit => {
-        habit.status = "todo";
-    });
-    
+        habit.status = getProductStatus(habit.value, habit.daily_amount)});
+
     return data;
 }

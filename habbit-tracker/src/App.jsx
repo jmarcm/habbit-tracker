@@ -16,6 +16,7 @@ export default function App() {
             .then(data => setHabits(data));
     }, []);
 
+    console.log(habits);
 
     const today = new Date();
     const todayFrenchFormat = getTodayFrenchFormat(today);
