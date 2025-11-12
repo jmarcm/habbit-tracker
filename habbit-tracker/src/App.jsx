@@ -28,6 +28,7 @@ export default function App() {
             name={habit.name}
             status={habit.status}
             daily_amount={habit.daily_amount}
+            value={habit.value}
         />
     ));
 
