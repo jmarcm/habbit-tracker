@@ -1,19 +1,20 @@
 import React from "react";
 import { FaCirclePlus, FaSquareCheck } from "react-icons/fa6";
 
-export default function Habit({ text, status, value, ...props }) {
-    console.log(props);
+export default function Habit({ name, status, daily_amount, ...props }) {
 
     const partialIndicatorsElements = [];
-    for (let i = 0; i < value; i++) {
+    for (let i = 0; i < daily_amount; i++) {
         partialIndicatorsElements.push(<li key={i}><FaSquareCheck /></li>);
     }
 
     return (
-        <div className={`habit ${status} ${value}`}>
+        <div className={`habit ${status} ${daily_amount}`}>
 
             <div className="main-content">
-                <div>{text}</div>
+                <div>
+                    {name} {daily_amount > 1 && `(${daily_amount})`}
+                </div>
 
                 {(status === 'done') ? (
                     <div className="indicator">
@@ -27,7 +28,7 @@ export default function Habit({ text, status, value, ...props }) {
                 )}
             </div>
 
-            {value > 1 && (
+            {daily_amount > 1 && (
                 <ul className="partial-indicators">
                     {partialIndicatorsElements}
                 </ul>
